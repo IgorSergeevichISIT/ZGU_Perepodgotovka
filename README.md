@@ -67,7 +67,7 @@ Service Workers, PWA, Virtual DOM, Deploy, Производительность
 
 Создание калькулятора. Функции на JavaScript.
 
-* [Методические указания](/turorials/lab2/README.md)
+* [Методические указания](/turorials/lab2/readme.md)
 
 #### Лабораторная работа 3
 
