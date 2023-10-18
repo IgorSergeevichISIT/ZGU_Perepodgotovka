@@ -4,12 +4,13 @@
   margin-top: 5px;             /* задаем отступ от кнопки сверху*/
   width: 50px;                 /* задаем ширину кнопки */
   height: 50px;                /* задаем высоту кнопки */
-  border-radius: 50%;          /* округляем кнопку */
+  border-radius: 0%;          /* округляем кнопку */
   border: none;                /* отключаем обводку */
   background: #515151;         /* задаем серый цвет кнопки */
   color: white;                /* задаем белый цвет текста внутри кнопки */
   font-size: 1.5rem;           /* увеличим размер шрифта */
-  font-family: Arial, Helvetica, sans-serif; /* сменим шрифт */
+  font-weight: bold;
+  font-family: Tahoma, Helvetica, sans-serif; /* сменим шрифт */
   cursor: pointer;             /* при наведении на кнопку курсор будет изменен
                                   со стрелки на 'указательный палец' */
   user-select: none;           /* отключаем возможность выделить текст внутри кнопки */
@@ -27,12 +28,12 @@
 
 /* селектор для кнопок первостепенных операций */
 .my-btn.primary {
-  background: #ff9801; /* цвет кнопки оранжевый */
+  background: blue; /* цвет кнопки оранжевый */
 }
 
 /* селектор для кнопок второстепенных операций */
 .my-btn.secondary {
-  background: #a6a6a6; /* цвет кнопки сервый */
+  background: green; /* цвет кнопки сервый */
 }
 
 /* селектор для кнопки расчета выражения (=) */
@@ -52,4 +53,29 @@
   color: #ffffff;              /* цвет текста белый */
   font-size: 1.5rem;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+button.change_theme {
+    position: absolute;
+    top:40px;
+    left:40px;
+    padding: 10px;
+    background: darkgray;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+body {
+    background = "white"
+}
+
+.main_window {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.basement {
+    align:center;
 }

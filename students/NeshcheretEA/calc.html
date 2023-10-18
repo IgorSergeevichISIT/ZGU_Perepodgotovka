@@ -4,11 +4,25 @@
 <head>
   <title>Калькулятор</title>
   <link rel="stylesheet" href="calc.css">
+  <meta charset="utf-8">
 </head>
 
 <body>
-  <div> <!-- div - это базовый html-контейнер, который может содержать в себе другие html-элементы. -->
-
+  <button class="change_theme">Switch color</button> <!-- Не знаю как сделать сохранение при обновлении, нашел такой способ -->
+  <script type="text/javascript">
+    var i = "white";
+    document.querySelector("button").addEventListener("click",
+    function(){
+    if (i === "white") {
+      document.querySelector("body").style.background = "black";
+      i = "black";
+     } else {
+      document.querySelector("body").style.background = "white";
+      i = "white";
+     }
+    })
+  </script>
+  <div class="main_window"> <!-- div - это базовый html-контейнер, который может содержать в себе другие html-элементы. -->
     <!-- блок с экраном калькулятора, где будет выводиться результат вычислений. -->
     <div id="result" class="result">
       0
@@ -51,6 +65,7 @@
         <button id="btn_op_equal" class="my-btn primary execute">=</button>
       </div>
     </div>
+    <div class="basement">ЛР выполнена Нещеретом Е.А.</div>
   </div>
 </body>
 </html>
