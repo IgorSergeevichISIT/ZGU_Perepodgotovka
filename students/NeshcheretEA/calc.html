@@ -10,17 +10,21 @@
 <body>
   <button class="change_theme">Switch color</button> <!-- Не знаю как сделать сохранение при обновлении, нашел такой способ -->
   <script type="text/javascript">
-    var i = "white";
+    if (localStorage.getItem('theme') === null) {
+      localStorage.setItem('theme', "white");
+    }
+    var i = localStorage.getItem('theme');
+    document.querySelector("body").style.background = i;
     document.querySelector("button").addEventListener("click",
     function(){
-    if (i === "white") {
+    if (localStorage.getItem('theme') === "white") {
       document.querySelector("body").style.background = "black";
-      i = "black";
+      localStorage.setItem('theme', "black");
      } else {
       document.querySelector("body").style.background = "white";
-      i = "white";
+      localStorage.setItem('theme', "white");
      }
-    })
+    });
   </script>
   <div class="main_window"> <!-- div - это базовый html-контейнер, который может содержать в себе другие html-элементы. -->
     <!-- блок с экраном калькулятора, где будет выводиться результат вычислений. -->
