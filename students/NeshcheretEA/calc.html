@@ -13,8 +13,7 @@
     if (localStorage.getItem('theme') === null) {
       localStorage.setItem('theme', "white");
     }
-    var i = localStorage.getItem('theme');
-    document.querySelector("body").style.background = i;
+    document.querySelector("body").style.background = localStorage.getItem('theme');
     document.querySelector("button").addEventListener("click",
     function(){
     if (localStorage.getItem('theme') === "white") {
