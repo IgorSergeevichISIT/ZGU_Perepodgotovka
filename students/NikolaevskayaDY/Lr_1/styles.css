@@ -1,0 +1,107 @@
+/* опишем базовый стиль кнопки калькулятора */
+.my-btn { 
+  margin-right: 5px;           /* задаем отступ от кнопки справа */
+  margin-top: 5px;             /* задаем отступ от кнопки сверху*/
+  width: 50px;                 /* задаем ширину кнопки */
+  height: 50px;                /* задаем высоту кнопки */
+  border-radius: 0%;          /* округляем кнопку */
+  border: none;                /* отключаем обводку */
+  background: #ebf08b;         /* задаем серый цвет кнопки */
+  color: white;                /* задаем белый цвет текста внутри кнопки */
+  font-size: 1.5rem;           /* увеличим размер шрифта */
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif; /* сменим шрифт */
+  font-weight: 700;
+  cursor: pointer;             /* при наведении на кнопку курсор будет изменен
+                                  со стрелки на 'указательный палец' */
+  user-select: none;           /* отключаем возможность выделить текст внутри кнопки */
+} 
+
+/* hover - это состояние элемента, когда на него наведен курсор */
+.my-btn:hover {
+  background: rgb(218, 189, 24); /* при наведение курсора на кнопку, она будет окрашена в серый */
+  color: #08051f;
+}
+
+/* active - это состояние активации элемента. В случае кнопки - нажатие на нее */
+.my-btn:active {
+  filter: brightness(130%); /* увеличим интенсивность цвета для эффекта вспышки */
+}
+
+/* селектор для кнопок первостепенных операций */
+.my-btn.primary { 
+  background: #955454; /* цвет кнопки оранжевый */
+}
+
+/* селектор для кнопок второстепенных операций */
+.my-btn.secondary { 
+  background: #888c1f; /* цвет кнопки сервый */
+}
+
+/* селектор для кнопки расчета выражения (=) */
+.my-btn.execute { 
+  width: 110px;          /* сделаем кнопку шире других */
+     /* подкорректируем округлость */
+}
+/* селектор для поля вывода результата */
+.result { 
+  width: 230px;
+  height: 100px;
+  margin-bottom: 0px;         /* отступ снизу */
+  padding-right: 10px;         /* выступ справа */
+  background:  rgba(54, 51, 51); /* цвет можно задавать и таким образом */
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  display: grid;
+  justify-items: end;
+  align-items: end;  
+  text-align: right;           /* примагнитим текст к правой стороне */
+  color: #81e992;              /* цвет текста белый */
+  margin: auto;
+  font-size: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+} 
+.btncalc {
+  background: rgb(54, 51, 51);
+  width:240px;
+  margin: auto;
+}
+body {
+  background-size: cover;
+  background-image: url(123.jpg);
+}  
+h3 {
+  color:azure;
+  font-weight: 100;
+}
+label {
+  color:azure;
+}
+p {
+  color:azure
+}
+.btnmode {
+  width: 230px;                 /* задаем ширину кнопки */
+  height: 50px;                /* задаем высоту кнопки */
+  border:#08051f;                /* отключаем обводку */
+  background: #1224c4;         /* задаем серый цвет кнопки */
+  color: white;                /* задаем белый цвет текста внутри кнопки */
+  font-size: 1.5rem;           /* увеличим размер шрифта */
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif; /* сменим шрифт */
+  font-weight: 100;
+  margin: auto;
+  cursor: pointer;             /* при наведении на кнопку курсор будет изменен
+                                  со стрелки на 'указательный палец' */
+  user-select: none;           /* отключаем возможность выделить текст внутри кнопки */
+}
+.btnmode:hover {
+  background: rgb(129, 189, 219); /* при наведение курсора на кнопку, она будет окрашена в серый */
+  color: #08051f;
+}
+
+/* active - это состояние активации элемента. В случае кнопки - нажатие на нее */
+.btnmode:active {
+  filter: brightness(130%); /* увеличим интенсивность цвета для эффекта вспышки */
+}
+details {
+  color:azure
+}
