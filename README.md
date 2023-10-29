@@ -17,7 +17,7 @@
 
 Основы JavaScript: типы, операторы, функции, объекты, коллекции, классы, DOM
 
-* [Презентация](/lectures/lec2 (1).pdf)
+* [Презентация](/lectures/lec2.pdf)
 
 ### Лекция 3. Углубленный JavaScript (для интересующихся) 
 
@@ -108,8 +108,12 @@ Service Workers, PWA, Virtual DOM, Deploy, Производительность
 3. [VS Code](https://code.visualstudio.com)
 4. [VS Code LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
-## Сдача работ
 
+## Публикация работ
+Все свои работы вы публикуете на выделенном хостинге от Гита - https://pages.github.com/
+ТАм же описано, как это сделать.
+
+## Сдача работ
 
 Все отчеты сохраняются в **pdf** (документы и презентации).
 
