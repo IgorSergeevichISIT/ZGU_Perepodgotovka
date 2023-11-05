@@ -1,0 +1,88 @@
+
+/* опишем базовый стиль кнопки калькулятора */
+.my-btn { 
+    margin-right: 5px;           /* задаем отступ от кнопки справа */
+    margin-top: 5px;             /* задаем отступ от кнопки сверху*/
+    width: 50px;                 /* задаем ширину кнопки */
+    height: 50px;                /* задаем высоту кнопки */
+    border-radius: 0%;          /* округляем кнопку */
+    border: none;                /* отключаем обводку */
+    background: #e60b45;         /* задаем серый цвет кнопки */
+    color: white;                /* задаем белый цвет текста внутри кнопки */
+    font-size: 1.5rem;           /* увеличим размер шрифта */
+    font-family: 'Times New Roman', Times, serif; /* сменим шрифт */
+    font-weight: 900;
+    cursor: pointer;             /* при наведении на кнопку курсор будет изменен
+                                    со стрелки на 'указательный палец' */
+    user-select: none;           /* отключаем возможность выделить текст внутри кнопки */
+  } 
+  
+  /* hover - это состояние элемента, когда на него наведен курсор */
+  .my-btn:hover {
+    background: rgb(238, 241, 5); /* при наведение курсора на кнопку, она будет окрашена в серый */
+  }
+  
+  /* active - это состояние активации элемента. В случае кнопки - нажатие на нее */
+  .my-btn:active {
+    filter: brightness(130%); /* увеличим интенсивность цвета для эффекта вспышки */
+  }
+  
+  /* селектор для кнопок первостепенных операций */
+  .my-btn.primary { 
+    background: #898065; /* цвет кнопки оранжевый */
+  }
+  
+  /* селектор для кнопок второстепенных операций */
+  .my-btn.secondary { 
+    background: #185a9c; /* цвет кнопки сервый */
+  }
+  
+  /* селектор для кнопки расчета выражения (=) */
+  .my-btn.execute { 
+    width: 110px;          /* сделаем кнопку шире других */
+    border-radius: 0%;   /* подкорректируем округлость */
+  }
+  
+  /* селектор для кнопки выбора темы (Выбрать тему) */
+  .mybutton {
+    background: #08d115;
+    font-size: 1.2rem;
+    width: 150px;
+    height: 50px;
+    margin-top: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    cursor: pointer; 
+    
+  }
+  
+  /* селектор для поля вывода результата */
+  .result { 
+    width: 290px;
+    height: 70px;
+    margin-bottom: 15px;         /* отступ снизу */
+    padding-right: 10px;         /* выступ справа */
+    border-radius: 14px;
+    background: rgb(226, 212, 213); /* цвет можно задавать и таким образом */
+    text-align: right;           /* примагнитим текст к правой стороне */
+    color: #ea0e0e;              /* цвет текста белый */
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+  }
+
+  .cal {
+    background: black;
+    background-repeat: no-repeat;
+    background-size: 400px 400px;
+    background-image: url(https://avatars.mds.yandex.net/i?id=3959460e615b2ae2bce68c04524f43ae2fb2d6f6-10932829-images-thumbs&n=13);
+  }
+  .text {
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+         }
+        
+     
+
+                   
+    
