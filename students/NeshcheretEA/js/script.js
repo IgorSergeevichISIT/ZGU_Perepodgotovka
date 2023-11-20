@@ -7,6 +7,7 @@ window.onload = function () {
 
 // окно вывода результата
     outputElement = document.getElementById("result")
+    perc_btn = document.getElementById("btn_op_percent")
 
 // список объектов кнопок циферблата (id которых начинается с btn_digit_)
     digitButtons = document.querySelectorAll('[id ^= "btn_digit_"]')
@@ -24,6 +25,25 @@ window.onload = function () {
             outputElement.innerHTML = ((a[0] === '.') ? 0 + a : a) + selectedOperation + ((b[0] === '.') ? 0 + b : b);
 
         }
+    }
+
+    perc_btn.onclick = function () {
+        if (a === '' || b === '') return
+        switch (selectedOperation) {
+            case 'x':
+                expressionResult = (+a) * (+b)/100
+                break;
+            case '+':
+                expressionResult = (+a) + a*(+b)/100
+                break;
+            case '-':
+                expressionResult = (+a) - a*(+b)/100
+                break;
+            case '/':
+                expressionResult = (+a) / (+b)/100
+                break;
+        }
+        outputElement.innerHTML = expressionResult.toString()
     }
 
 // устанавка колбек-функций на кнопки циферблата по событию нажатия
