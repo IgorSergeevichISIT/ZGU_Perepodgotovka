@@ -54,7 +54,17 @@ window.onload = function () {
         selectedOperation = '/'
         outputElement.innerHTML = a + selectedOperation
     }
-
+// кнопка +/-
+    document.getElementById("btn_op_sign").onclick = function () {
+        if (a === '') return
+        if (!selectedOperation) {
+            a = -a
+            outputElement.innerHTML = a
+        } else {
+            b = -b
+            outputElement.innerHTML = a + selectedOperation + ((b >= 0) ? b : "(" + b + ")");
+        }
+    }
 // кнопка очищения
     document.getElementById("btn_op_clear").onclick = function () {
         a = ''

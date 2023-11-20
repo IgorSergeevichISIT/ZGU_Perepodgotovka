@@ -71,8 +71,6 @@ button.change_theme {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url("ggst.jpg");
-
 }
 
 .basement {
