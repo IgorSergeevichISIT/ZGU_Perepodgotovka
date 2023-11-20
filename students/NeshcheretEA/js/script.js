@@ -16,12 +16,13 @@ window.onload = function () {
             if ((digit != '.') || (digit == '.' && !a.includes(digit))) {
                 a += digit
             }
-            outputElement.innerHTML = a
+            outputElement.innerHTML = (a[0] === '.') ? 0 + a : a;
         } else {
             if ((digit != '.') || (digit == '.' && !b.includes(digit))) {
                 b += digit
-                outputElement.innerHTML = a + selectedOperation + b
             }
+            outputElement.innerHTML = ((a[0] === '.') ? 0 + a : a) + selectedOperation + ((b[0] === '.') ? 0 + b : b);
+
         }
     }
 
@@ -35,34 +36,34 @@ window.onload = function () {
 
 // установка колбек-функций для кнопок операций
     document.getElementById("btn_op_mult").onclick = function () {
-        if (a === '') return
+        if (a === '' || a === '.') return
         selectedOperation = 'x'
-        outputElement.innerHTML = a + selectedOperation
+        outputElement.innerHTML = ((a[0] === '.') ? 0 + a : a) + selectedOperation
     }
     document.getElementById("btn_op_plus").onclick = function () {
-        if (a === '') return
+        if (a === '' || a === '.') return
         selectedOperation = '+'
-        outputElement.innerHTML = a + selectedOperation
+        outputElement.innerHTML = ((a[0] === '.') ? 0 + a : a) + selectedOperation
     }
     document.getElementById("btn_op_minus").onclick = function () {
-        if (a === '') return
+        if (a === '' || a === '.') return
         selectedOperation = '-'
-        outputElement.innerHTML = a + selectedOperation
+        outputElement.innerHTML = ((a[0] === '.') ? 0 + a : a) + selectedOperation
     }
     document.getElementById("btn_op_div").onclick = function () {
-        if (a === '') return
+        if (a === '' || a === '.') return
         selectedOperation = '/'
-        outputElement.innerHTML = a + selectedOperation
+        outputElement.innerHTML = ((a[0] === '.') ? 0 + a : a) + selectedOperation
     }
 // кнопка +/-
     document.getElementById("btn_op_sign").onclick = function () {
         if (a === '') return
         if (!selectedOperation) {
             a = -a
-            outputElement.innerHTML = a
+            outputElement.innerHTML = (a[0] === '.') ? 0 + a : a
         } else {
             b = -b
-            outputElement.innerHTML = a + selectedOperation + ((b >= 0) ? b : "(" + b + ")");
+            outputElement.innerHTML = ((a[0] === '.') ? 0 + a : a) + selectedOperation + ((b >= 0) ? b : "(" + b + ")");
         }
     }
 // кнопка очищения
