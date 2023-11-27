@@ -9,6 +9,39 @@ window.onload = function () {
     outputElement = document.getElementById("result")
     perc_btn = document.getElementById("btn_op_percent")
 
+    function OutputElementForResult(a, b, selectedOperation) {
+        if (a === '' || a === '.') {
+            return ((a[0] === '.') ? 0 + a : a)
+        } else {
+            if (!selectedOperation) {
+                return ((a[0] === '.') ? 0 + a : a)
+            } else {
+                if (b === '' || b === '.') {
+                    return ((a[0] === '.') ? 0 + a : a) + selectedOperation + ((b[0] === '.') ? 0 + b : b)
+                } else {
+                    return ((a[0] === '.') ? 0 + a : a) + selectedOperation + ((b[0] === '.') ? 0 + b : b)
+                }
+            }
+        }
+    }
+
+    function GetExpressionResult(selectedOperation) {
+        switch (selectedOperation) {
+            case 'x':
+                expressionResult = (+a) * (+b)
+                break;
+            case '+':
+                expressionResult = (+a) + (+b)
+                break;
+            case '-':
+                expressionResult = (+a) - (+b)
+                break;
+            case '/':
+                expressionResult = (+a) / (+b)
+                break;
+        }
+    }
+
 // список объектов кнопок циферблата (id которых начинается с btn_digit_)
     digitButtons = document.querySelectorAll('[id ^= "btn_digit_"]')
 
@@ -17,13 +50,12 @@ window.onload = function () {
             if ((digit != '.') || (digit == '.' && !a.includes(digit))) {
                 a += digit
             }
-            outputElement.innerHTML = (a[0] === '.') ? 0 + a : a;
+            outputElement.innerHTML = OutputElementForResult(a, b, selectedOperation);
         } else {
             if ((digit != '.') || (digit == '.' && !b.includes(digit))) {
                 b += digit
             }
-            outputElement.innerHTML = ((a[0] === '.') ? 0 + a : a) + selectedOperation + ((b[0] === '.') ? 0 + b : b);
-
+            outputElement.innerHTML = OutputElementForResult(a, b, selectedOperation);
         }
     }
 
@@ -31,16 +63,16 @@ window.onload = function () {
         if (a === '' || b === '') return
         switch (selectedOperation) {
             case 'x':
-                expressionResult = (+a) * (+b)/100
+                expressionResult = (+a) * (+b) / 100
                 break;
             case '+':
-                expressionResult = (+a) + a*(+b)/100
+                expressionResult = (+a) + a * (+b) / 100
                 break;
             case '-':
-                expressionResult = (+a) - a*(+b)/100
+                expressionResult = (+a) - a * (+b) / 100
                 break;
             case '/':
-                expressionResult = (+a) / (+b)/100
+                expressionResult = (+a) / (+b) / 100
                 break;
         }
         outputElement.innerHTML = expressionResult.toString()
@@ -57,33 +89,61 @@ window.onload = function () {
 // установка колбек-функций для кнопок операций
     document.getElementById("btn_op_mult").onclick = function () {
         if (a === '' || a === '.') return
-        selectedOperation = 'x'
-        outputElement.innerHTML = ((a[0] === '.') ? 0 + a : a) + selectedOperation
+        if (!selectedOperation) {
+            selectedOperation = 'x'
+        } else {
+            GetExpressionResult(selectedOperation)
+            a = expressionResult
+            selectedOperation = 'x'
+            b = ''
+        }
+        outputElement.innerHTML = OutputElementForResult(a, b, selectedOperation)
     }
     document.getElementById("btn_op_plus").onclick = function () {
         if (a === '' || a === '.') return
-        selectedOperation = '+'
-        outputElement.innerHTML = ((a[0] === '.') ? 0 + a : a) + selectedOperation
+        if (!selectedOperation) {
+            selectedOperation = '+'
+        } else {
+            GetExpressionResult(selectedOperation)
+            a = expressionResult
+            selectedOperation = '+'
+            b = ''
+        }
+        outputElement.innerHTML = OutputElementForResult(a, b, selectedOperation)
     }
     document.getElementById("btn_op_minus").onclick = function () {
         if (a === '' || a === '.') return
-        selectedOperation = '-'
-        outputElement.innerHTML = ((a[0] === '.') ? 0 + a : a) + selectedOperation
+        if (!selectedOperation) {
+            selectedOperation = '-'
+        } else {
+            GetExpressionResult(selectedOperation)
+            a = expressionResult
+            selectedOperation = '-'
+            b = ''
+        }
+        outputElement.innerHTML = OutputElementForResult(a, b, selectedOperation)
     }
     document.getElementById("btn_op_div").onclick = function () {
         if (a === '' || a === '.') return
-        selectedOperation = '/'
-        outputElement.innerHTML = ((a[0] === '.') ? 0 + a : a) + selectedOperation
+        if (!selectedOperation) {
+            selectedOperation = '/'
+        } else {
+            GetExpressionResult(selectedOperation)
+            a = expressionResult
+            selectedOperation = '/'
+            b = ''
+        }
+        outputElement.innerHTML = OutputElementForResult(a, b, selectedOperation)
     }
 // кнопка +/-
     document.getElementById("btn_op_sign").onclick = function () {
         if (a === '') return
         if (!selectedOperation) {
             a = -a
-            outputElement.innerHTML = (a[0] === '.') ? 0 + a : a
+            outputElement.innerHTML = OutputElementForResult(a, b, selectedOperation)
         } else {
             b = -b
-            outputElement.innerHTML = ((a[0] === '.') ? 0 + a : a) + selectedOperation + ((b >= 0) ? b : "(" + b + ")");
+            outputElement.innerHTML = OutputElementForResult(a, b, selectedOperation)
         }
     }
 // кнопка очищения
@@ -99,26 +159,11 @@ window.onload = function () {
     document.getElementById("btn_op_equal").onclick = function () {
         if (a === '' || b === '' || !selectedOperation)
             return
-
-        switch (selectedOperation) {
-            case 'x':
-                expressionResult = (+a) * (+b)
-                break;
-            case '+':
-                expressionResult = (+a) + (+b)
-                break;
-            case '-':
-                expressionResult = (+a) - (+b)
-                break;
-            case '/':
-                expressionResult = (+a) / (+b)
-                break;
-        }
-
-        a = expressionResult.toString()
+        GetExpressionResult(selectedOperation)
+        a = expressionResult
         b = ''
         selectedOperation = null
 
-        outputElement.innerHTML = a
+        outputElement.innerHTML = OutputElementForResult(a, b, selectedOperation)
     }
 };
