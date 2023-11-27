@@ -11,7 +11,7 @@ window.onload = function () {
 
     function OutputElementForResult(a, b, selectedOperation) {
         if (a === '' || a === '.') {
-            return ((a[0] === '.') ? 0 + a : a)
+            return ((a[0] === '.') ? 0 + a : '0')
         } else {
             if (!selectedOperation) {
                 return ((a[0] === '.') ? 0 + a : a)
@@ -42,6 +42,20 @@ window.onload = function () {
         }
     }
 
+    function EraseNumber() {
+        if (b !== '') {
+            b = b.slice(0, -1)
+        } else if (!selectedOperation && a !== '') {
+            a = a.slice(0, -1)
+        } else {
+            selectedOperation = null
+        }
+        outputElement.innerHTML = OutputElementForResult(a, b, selectedOperation);
+    }
+
+    outputElement.onclick = function () {
+        EraseNumber()
+    }
 // список объектов кнопок циферблата (id которых начинается с btn_digit_)
     digitButtons = document.querySelectorAll('[id ^= "btn_digit_"]')
 
@@ -150,7 +164,7 @@ window.onload = function () {
     document.getElementById("btn_op_clear").onclick = function () {
         a = ''
         b = ''
-        selectedOperation = ''
+        selectedOperation = null
         expressionResult = ''
         outputElement.innerHTML = 0
     }
