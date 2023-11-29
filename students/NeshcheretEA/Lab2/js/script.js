@@ -61,12 +61,12 @@ window.onload = function () {
 
     function onDigitButtonClicked(digit) {
         if (!selectedOperation) {
-            if ((digit != '.') || (digit == '.' && !a.includes(digit))) {
+            if ((digit !== '.') || (digit === '.' && !a.includes(digit))) {
                 a += digit
             }
             outputElement.innerHTML = OutputElementForResult(a, b, selectedOperation);
         } else {
-            if ((digit != '.') || (digit == '.' && !b.includes(digit))) {
+            if ((digit !== '.') || (digit === '.' && !b.includes(digit))) {
                 b += digit
             }
             outputElement.innerHTML = OutputElementForResult(a, b, selectedOperation);
@@ -174,7 +174,7 @@ window.onload = function () {
         if (a === '' || b === '' || !selectedOperation)
             return
         GetExpressionResult(selectedOperation)
-        a = expressionResult
+        a = expressionResult.toString()
         b = ''
         selectedOperation = null
 
