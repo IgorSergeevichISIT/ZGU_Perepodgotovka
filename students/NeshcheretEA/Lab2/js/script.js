@@ -4,7 +4,23 @@ window.onload = function () {
     let b = ''
     let expressionResult = ''
     let selectedOperation = null
-
+    document.addEventListener('keydown', function (event){
+        if (event.key >= '0' && event.key <= '9'){
+            onDigitButtonClicked(event.key)
+        } else {
+            if (['*', '/', '+', '-'].includes(event.key)){
+                if (!selectedOperation) {
+                    selectedOperation = event.key
+                } else {
+                    GetExpressionResult(event.key)
+                    a = expressionResult
+                    selectedOperation = event.key
+                    b = ''
+                }
+                outputElement.innerHTML = OutputElementForResult(a, b, selectedOperation)
+            }
+        }
+    })
 // окно вывода результата
     outputElement = document.getElementById("result")
     perc_btn = document.getElementById("btn_op_percent")

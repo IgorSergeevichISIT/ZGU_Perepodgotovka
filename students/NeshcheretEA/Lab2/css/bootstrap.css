@@ -3167,6 +3167,7 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #000;
   --bs-btn-disabled-bg: #f8f9fa;
   --bs-btn-disabled-border-color: #f8f9fa;
+  margin-left: 2px;
 }
 
 .btn-dark {
@@ -3184,6 +3185,7 @@ textarea.form-control-lg {
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #212529;
   --bs-btn-disabled-border-color: #212529;
+  margin-left: 2px;
 }
 
 .btn-outline-primary {
