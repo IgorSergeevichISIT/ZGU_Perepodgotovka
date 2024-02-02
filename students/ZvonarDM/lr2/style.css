@@ -11,10 +11,7 @@
     background: #616161;         /* задаем серый цвет кнопки */
     color: white;                /* задаем белый цвет текста внутри кнопки */
     font-size: 1.5rem;           /* увеличим размер шрифта */
-    font-weight: bold
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* сменим шрифт */
     cursor: pointer;             /* при наведении на кнопку курсор будет изменен
-                                    со стрелки на 'указательный палец' */
     user-select: none;           /* отключаем возможность выделить текст внутри кнопки */
     text-align: center;
   }
@@ -47,24 +44,41 @@
   
   /* селектор для поля вывода результата */
   .result { 
-    width: 217px;
-    height: 100px;
-    margin-bottom: 15px;         /* отступ снизу */
+    width: 280px;
+    height: 100px;        /* отступ снизу */
     padding-right: 10px;         /* выступ справа */
-    background: #01a2ff; /* цвет можно задавать и таким образом */
+    background-color: rgb(46, 159, 252); /* цвет можно задавать и таким образом */
     text-align: right;           /* примагнитим текст к правой стороне */
     color: #ffffff;              /* цвет текста белый */
     font-size: 1.5rem;
     font-family: Arial, Helvetica, sans-serif;
-    border-radius: 2px;
+    border-radius: 10px;
     font-weight: bolder
+
+  }
+  .themechanger { 
+    background-color: #86868628;
+    color: white;
+    font-size: 12px;
+    border: none;
+    width: 142px;
+    height: 25px;
+    border-radius: 10px;
+    margin-top: 10px;      
+    text-align: center; 
+  }
+  .themechanger:active {
+    filter: brightness(120%); /* увеличим интенсивность цвета для эффекта вспышки */
+  }
+  .themechanger:hover {
+    background: #01a2ff; /* при наведение курсора на кнопку, она будет окрашена в серый */
   }
   .fio {
     background-color: #86868628;
     color: white;
     font-size: 16px;
     border: none;
-    width: 230px;
+    width: 290px;
     height: 50px;
     border-radius: 10px;
     margin-top: 10px;      
@@ -78,7 +92,7 @@
     transform: translate(-50%, -50%); 
 }
 .btn_theme {
-    width: 230px;
+    width: 290px;
     height: 50px;
     margin-bottom: 5px;         /* отступ снизу */
     margin-top: 10px;       
@@ -94,7 +108,12 @@
   background-image: url('wallp.jpg'); 
   background-repeat: repeat;
   background-position: center;
-  background-size: 20%;
+  background-size: 100%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;             
+  top: 50%;                        
+  left: 50%;  
+  transform: translate(-50%, -50%); 
 }
 
 .dropbtn {
@@ -104,7 +123,7 @@
   font-size: 16px;
   border: none;
   cursor: pointer;
-  width: 230px;
+  width: 290px;
   height: 50px;
   border-radius: 10px;
   margin-top: 10px;      
@@ -123,7 +142,7 @@
   color: white;
   font-size: 16px;
   border: none;
-  width: 230px;
+  width: 290px;
   height: 50px;
   border-radius: 10px;
   margin-top: 10px;      

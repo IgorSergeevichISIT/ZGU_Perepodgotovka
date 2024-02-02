@@ -5,9 +5,10 @@
   <title>Калькулятор</title>
     <!-- указываем, что файл style.css содержит таблицу стилей (stylesheet) -->
     <link rel="stylesheet" href="style.css"> 
+    <script type="text/javascript" src="script.js"></script> 
 </head>
 
-<body bgcpolor = "#22222" background="wallp.jpg"
+<body bgcpolor = "#22222" class="body"
   <div id="mine_theme" class="mine_theme"> <!-- div - это базовый html-контейнер, который может содержать в себе другие html-элементы. -->
     
     <!-- блок с экраном калькулятора, где будет выводиться результат вычислений. -->
@@ -17,12 +18,15 @@
 
     <!-- блок с кнопками калькулятора. -->
     <div>
+      <button id="resultstheme" class="themechanger">Тема "Результата"</button>
+      <button id="backtheme" class="themechanger">Смена фона</button>
       <!--горизонтальный ряд из четырех кнопок-->
       <div>  
         <button id="btn_op_clear" class="my-btn secondary">C</button>
         <button id="btn_op_sign" class="my-btn secondary">+/-</button>
         <button id="btn_op_percent" class="my-btn secondary">%</button>
         <button id="btn_op_div" class="my-btn primary">/</button>
+        <button id="delOne" class="my-btn primary">Del</button>
       </div>
 
       <div>
@@ -30,6 +34,7 @@
         <button id="btn_digit_8" class="my-btn">8</button>
         <button id="btn_digit_9" class="my-btn">9</button>
         <button id="btn_op_mult" class="my-btn primary">x</button>
+        <button id="corenb" class="my-btn primary">√x</button>
       </div>
 
       <div>
@@ -37,6 +42,7 @@
         <button id="btn_digit_5" class="my-btn" >5</button>
         <button id="btn_digit_6" class="my-btn">6</button>
         <button id="btn_op_minus" class="my-btn primary">-</button>
+        <button id="stepenb" class="my-btn primary">x^2</button>
       </div>
 
       <div>
@@ -44,16 +50,17 @@
         <button id="btn_digit_2" class="my-btn">2</button>
         <button id="btn_digit_3" class="my-btn">3</button>
         <button id="btn_op_plus" class="my-btn primary">+</button>
+        <button id="fact" class="my-btn primary">!</button>
       </div>
 
       <div>
         <button id="btn_digit_0" class="my-btn">0</button>
         <button id="btn_digit_dot" class="my-btn">.</button>
         <button id="btn_op_equal" class="my-btn primary execute">=</button>
+        <button id="agent" class="my-btn primary">000</button>
       </div>
     </div>
   </div>
-  <button id="btn_theme" class="btn_theme">Dark/Day mode</button>
   <form action="http://github.com/IgorSergeevichISIT/ZGU_Perepodgotovka" target="_blank">
     <button id="btn_theme" class="btn_theme">GitHub</button>
   </form>
@@ -68,7 +75,7 @@
     </select>
   </form>
  
-  <div class = "end_page">Цель работы:<strong><u>знакомство</u></strong> с: <strong><u>HTML</u></strong>, <strong><u>CSS</u></strong>.</div>
+  <div class = "end_page">Цель лабораторной работы: <strong><u>знакомство</u></strong> с: <strong><u>HTML</u></strong>, <strong><u>CSS</u></strong>, <strong><u>JS</u></strong>.</div>
 
   <h6 id="fio" class="fio">ЛР выполнена Звонар Д.М.</h6>
 </body>
