@@ -1,0 +1,151 @@
+
+
+/* опишем базовый стиль кнопки калькулятора */
+.my-btn { 
+    margin-right: 5px;           /* задаем отступ от кнопки справа */
+    margin-top: 5px;             /* задаем отступ от кнопки сверху*/
+    width: 50px;                 /* задаем ширину кнопки */
+    height: 50px;                /* задаем высоту кнопки */
+    border-radius: 0%;          /* округляем кнопку */
+    border: none;                /* отключаем обводку */
+    background: #616161;         /* задаем серый цвет кнопки */
+    color: white;                /* задаем белый цвет текста внутри кнопки */
+    font-size: 1.5rem;           /* увеличим размер шрифта */
+    cursor: pointer;             /* при наведении на кнопку курсор будет изменен
+    user-select: none;           /* отключаем возможность выделить текст внутри кнопки */
+    text-align: center;
+  }
+  
+  /* hover - это состояние элемента, когда на него наведен курсор */
+  .my-btn:hover {
+    background: #01a2ff; /* при наведение курсора на кнопку, она будет окрашена в серый */
+  }
+  
+  /* active - это состояние активации элемента. В случае кнопки - нажатие на нее */
+  .my-btn:active {
+    filter: brightness(150%); /* увеличим интенсивность цвета для эффекта вспышки */
+  }
+  
+  /* селектор для кнопок первостепенных операций */
+  .my-btn.primary { 
+    background: #01a2ff; /* цвет кнопки оранжевый */
+  }
+  
+  /* селектор для кнопок второстепенных операций */
+  .my-btn.secondary { 
+    background: #a6a6a6; /* цвет кнопки сервый */
+  }
+  
+  /* селектор для кнопки расчета выражения (=) */
+  .my-btn.execute { 
+    width: 110px;          /* сделаем кнопку шире других */
+    border-radius: 0px;   /* подкорректируем округлость */
+  }
+  
+  /* селектор для поля вывода результата */
+  .result { 
+    width: 280px;
+    height: 100px;        /* отступ снизу */
+    padding-right: 10px;         /* выступ справа */
+    background-color: rgb(46, 159, 252); /* цвет можно задавать и таким образом */
+    text-align: right;           /* примагнитим текст к правой стороне */
+    color: #ffffff;              /* цвет текста белый */
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+    font-weight: bolder
+
+  }
+  .themechanger { 
+    background-color: #86868628;
+    color: white;
+    font-size: 12px;
+    border: none;
+    width: 142px;
+    height: 25px;
+    border-radius: 10px;
+    margin-top: 10px;      
+    text-align: center; 
+  }
+  .themechanger:active {
+    filter: brightness(120%); /* увеличим интенсивность цвета для эффекта вспышки */
+  }
+  .themechanger:hover {
+    background: #01a2ff; /* при наведение курсора на кнопку, она будет окрашена в серый */
+  }
+  .fio {
+    background-color: #86868628;
+    color: white;
+    font-size: 16px;
+    border: none;
+    width: 290px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 10px;      
+    text-align: center;
+    padding-top: 30px;     
+}
+.mine_theme {
+    position: absolute;             
+    top: 50%;                        
+    left: 50%;  
+    transform: translate(-50%, -50%); 
+}
+.btn_theme {
+    width: 290px;
+    height: 50px;
+    margin-bottom: 5px;         /* отступ снизу */
+    margin-top: 10px;       
+    background: #01a2ff; /* цвет можно задавать и таким образом */
+    text-align: center;           /* примагнитим текст к правой стороне */
+    color: #646464;              
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 10px;
+    font-weight: thin
+}
+.body {
+  background-image: url('wallp.jpg'); 
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 100%;
+  background-color: rgb(255, 255, 255);
+  position: absolute;             
+  top: 50%;                        
+  left: 50%;  
+  transform: translate(-50%, -50%); 
+}
+
+.dropbtn {
+  background-color: #86868628;
+  color: rgb(255, 255, 255);
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 290px;
+  height: 50px;
+  border-radius: 10px;
+  margin-top: 10px;      
+  text-align: center;      
+}
+
+.dropdown-content {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.end_page {
+  background-color: #86868628;
+  color: white;
+  font-size: 16px;
+  border: none;
+  width: 290px;
+  height: 50px;
+  border-radius: 10px;
+  margin-top: 10px;      
+  text-align: center;      
+  padding-top: 10px;    
+}
