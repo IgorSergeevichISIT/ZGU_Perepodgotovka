@@ -9,7 +9,7 @@
 Для выполнения работы нам понадобится библиотека Keras, которая является частью TensorFlow. Убедитесь, что вы установили TensorFlow:
 
 ```bash
-pip install tensorflow
+pip install tensorflow numpy keras matplotlib
 ```
 
 ## Шаги выполнения
